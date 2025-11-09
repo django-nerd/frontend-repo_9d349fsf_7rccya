@@ -1,28 +1,21 @@
-import { useState } from 'react'
+import React from 'react';
+import Hero from './components/Hero.jsx';
+import Motivation from './components/Motivation.jsx';
+import SocialLinks from './components/SocialLinks.jsx';
+import Certificates from './components/Certificates.jsx';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
+    <div className="min-h-screen w-full bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300">
+      <Hero />
+      <main className="relative z-10">
+        <Motivation />
+        <SocialLinks />
+        <Certificates />
+      </main>
+      <footer className="py-8 text-center text-sm opacity-70">
+        © {new Date().getFullYear()} Cybersecurity Portfolio
+      </footer>
     </div>
-  )
+  );
 }
-
-export default App
